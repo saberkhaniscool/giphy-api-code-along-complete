@@ -12,6 +12,7 @@ class MyApp < Sinatra::Base
 #post route
   post '/gif' do
     user_search=params[:search]
+    @result =[]
     @result=format_request_and_call_api(user_search)
     erb :results
   end

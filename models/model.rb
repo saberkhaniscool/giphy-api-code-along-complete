@@ -12,5 +12,16 @@ def format_request_and_call_api(search_term)
 	# data comes back as a hash with info stored in key :data as an array
 	data = sample_parsedResponse["data"]
 	# data is now an array containing hashes of the gifs
-	data.sample["images"]["fixed_height"]["url"]
+	# data.sample["images"]["fixed_height"]["url"]
+	
+	@url_array = []
+	limit = data.length - 1
+	
+	for counter in 0..limit
+		@url_array[counter] = data[counter]["images"]["fixed_height"]["url"]
+	end
+	
+	return @url_array
 end
+
+format_request_and_call_api("happy birthday")

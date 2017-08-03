@@ -5,8 +5,11 @@
     <title>title</title>
   </head>
   <body>
+    <% @result.each do |url| %>
+		<img src="<%= url %>" <br />
+	  <% end %>
    
-   <img src="<%=@result%>"
+   
    
   </body>
 </html>
